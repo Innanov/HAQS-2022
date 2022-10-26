@@ -10,7 +10,7 @@ import numpy as np
 depth = 1
 S_size = 2
 
-dev = qml.device("lightning.qubit", shots=1000, wires=1)
+dev = qml.device("default.qubit", shots=1000, wires=1)
 
 def ansatz(params):
     qml.RX(params[0], wires=0)
@@ -31,11 +31,7 @@ def encode_data(x):
     qml.IsingXX(phi=1, wires=0)
     x = shape(0, 1)
     return x[0], x[1], (np.pi - x[0]) * (np.pi - x[1])
-#n_wires = 2  # number of qubits
-#S_size = 2  # number of interactions considered
-#depth = 1  # number of layers in ansatz
-#pset = powerset(range(n_wires), S_size)
-#powerset =(range(0, 1) > (1) (0) (0,1) (1,1) (1,0) (0,0)) eventuellement 
+
 
 
 print(qml.draw(ansatz, max_length=100,expansion_strategy='gradient'))
