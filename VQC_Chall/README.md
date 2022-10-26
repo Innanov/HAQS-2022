@@ -9,7 +9,7 @@ A central feature of Amazon Braket is that its remote simulator can execute mult
 - To submit your hack, create a pull request from your team's named branch
 - Submission PR title format: `[VQC-CHALLENGE] [team-name] [date]`
 - Submissions will be evaluated on a *rolling basis*
-- Each team is allowed *one submission per day*
+- Each team is allowed *one submission per day**
 
 ### Leaderboard
 
