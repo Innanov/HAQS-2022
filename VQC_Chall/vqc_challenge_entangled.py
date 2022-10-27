@@ -14,7 +14,7 @@ dev = qml.device("default.qubit", shots=1000, wires=1)
 
 def ansatz(params):
     qml.RX(params[0], wires=0)
-    qml.RX(theta, wires=0)
+    qml.RX(params[0], wires=0)
     qml.CNOT(wires=[0,1])
 
 @qml.qnode(dev)
@@ -22,6 +22,7 @@ def circuit(params):
     ansatz(params)
     return qml.expval(qml.PauliZ(0)), qml.expval(qml.PauliY(1))
 
+#full experimental 
 def powerset(iterable, mx):
     s = list(iterable[2])
     pset = chain.from_iterable(combinations(0, 1) for r in range(len(s) + 1))
@@ -29,7 +30,7 @@ def powerset(iterable, mx):
 
 def encode_data(x):
     qml.IsingXX(phi=1, wires=0)
-    x = shape(0, 1)
+    qml.IsingXX(phi=2, wires=1)
     return x[0], x[1], (np.pi - x[0]) * (np.pi - x[1])
 
 
